@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
 
+
 exports.shorthands = undefined;
 
 exports.up = (pgm) => {
@@ -9,7 +10,10 @@ exports.up = (pgm) => {
       created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
       bio VARCHAR(400),
-      username VARCHAR(30) NOT NULL
+      username VARCHAR(30) NOT NULL,
+      age INTEGER,
+      email TEXT NOT NULL UNIQUE
+      
     );
   `);
 };

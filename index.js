@@ -3,9 +3,9 @@ const pool = require('./src/pool');
 
 pool
   .connect({
-    host: 'localhost',
+    host: 'database-1.cizjl1vpxwga.eu-central-1.rds.amazonaws.com',
     port: 5432,
-    database: 'socialnetwork',
+    database: 'test',
     user: 'postgres',
     password: 'postgres',
   })

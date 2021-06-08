@@ -17,12 +17,12 @@ class UserRepo {
     return toCamelCase(rows)[0];
   }
 
-  static async insert(username, bio) {
+  static async insert(username, bio,age, email) {
     const {
       rows,
     } = await pool.query(
-      'INSERT INTO users (username, bio) VALUES ($1, $2) RETURNING *;',
-      [username, bio]
+      'INSERT INTO users (username, bio, age, email) VALUES ($1, $2, $3, $4) RETURNING *;',
+      [username, bio, age, email]
     );
 
     return toCamelCase(rows)[0];

@@ -7,8 +7,8 @@ const DEFAULT_OPTS = {
   host: 'localhost',
   port: 5432,
   database: 'socialnetwork-test',
-  user: 'sg',
-  password: '',
+  user: 'bashiru',
+  password: 'bashiru',
 };
 
 class Context {

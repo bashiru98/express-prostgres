@@ -6,8 +6,10 @@ POST http://localhost:3005/users HTTP/1.1
 content-type: application/json
 
 {
-  "username": "minty3",
-  "bio": "I am a mint"
+  "username": "bashiru1",
+  "bio": "I am a bashiru1",
+  "age":10,
+  "email":"bashiru@gmail.com"
 }
 
 ###
@@ -16,11 +18,17 @@ PUT http://localhost:3005/users/1 HTTP/1.1
 content-type: application/json
 
 {
-  "username": "Alyson156",
-  "bio": "I am alyson"
+  "username": "bashiru",
+  "bio": "updated "
 }
 
 ###
 
 DELETE http://localhost:3005/users/2 HTTP/1.1
+content-type: application/json
+
+###
+
+
+get http://localhost:3005/users/2 HTTP/1.1
 content-type: application/json
