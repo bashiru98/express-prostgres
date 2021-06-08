@@ -12,10 +12,10 @@ router.get('/users', async (req, res) => {
   res.send(users);
 });
 
-router.get('/users/:id', async (req, res) => {
-  const { id } = req.params;
+router.get('/users/one', async (req, res) => {
+  const { email } = req.body;
 
-  const user = await UserRepo.findById(id);
+  const user = await UserRepo.findByEmail(email);
 
   if (user) {
     res.send(user);
@@ -25,8 +25,12 @@ router.get('/users/:id', async (req, res) => {
 });
 
 router.post('/users', async (req, res) => {
-  const { username, bio,age, email } = req.body;
+  const { username, bio, age, email } = req.body;
+  
 
+  const userExist = await UserRepo.findByEmail(email);
+  if (userExist) return res.status(400).json('user already exist')
+  
   const user = await UserRepo.insert(username, bio, age, email);
 
   res.send(user);
@@ -57,4 +61,20 @@ router.delete('/users/:id', async (req, res) => {
   }
 });
 
+router.get("/users/email", async (req, res) => {
+ 
+  try {
+    const existingUser = await UserRepo.findOne()
+  if (existingUser) {
+    res.send(existingUser)
+  } else {
+   
+    res.send('not found')
+  }
+  } catch (error) {
+    console.log(error)
+  }
+  
+  
+})
 module.exports = router;

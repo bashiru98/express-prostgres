@@ -9,9 +9,9 @@ class UserRepo {
     return toCamelCase(rows);
   }
 
-  static async findById(id) {
-    const { rows } = await pool.query('SELECT * FROM users WHERE id = $1;', [
-      id,
+  static async findByEmail(email) {
+    const { rows } = await pool.query('SELECT * FROM users WHERE email = $1;', [
+      email,
     ]);
 
     return toCamelCase(rows)[0];
@@ -52,6 +52,7 @@ class UserRepo {
 
     return parseInt(rows[0].count);
   }
+  
 }
 
 module.exports = UserRepo;

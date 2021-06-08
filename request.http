@@ -6,10 +6,10 @@ POST http://localhost:3005/users HTTP/1.1
 content-type: application/json
 
 {
-  "username": "bashiru1",
-  "bio": "I am a bashiru1",
-  "age":10,
-  "email":"bashiru@gmail.com"
+  "username": "bashiru11",
+  "bio": "I am bashiru11",
+  "age":11,
+  "email":"bashiru1@gmail.com"
 }
 
 ###
@@ -26,9 +26,23 @@ content-type: application/json
 
 DELETE http://localhost:3005/users/2 HTTP/1.1
 content-type: application/json
-
+{
+  "username": "bashiru",
+  "bio": "updated "
+}
 ###
 
 
-get http://localhost:3005/users/2 HTTP/1.1
+get http://localhost:3005/users/one HTTP/1.1
 content-type: application/json
+
+{
+  "email": "bashiru11@gmail.com"
+
+}
+
+###
+
+get http://localhost:3005/users/email HTTP/1.1
+content-type: application/json
+
